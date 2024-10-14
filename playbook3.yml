@@ -1,0 +1,17 @@
+---
+- hosts: webservers
+  become: yes
+  ignore_errors: yes
+  vars_files:
+    - vars.yml 
+  tasks:
+    - name: download package
+      get_url: 
+        url: "{{ LINK_URL }}"
+        dest: "{{ DEST }}"
+
+    - name: delete the package
+      
+      file:
+        path: "{{ DEST }}" # Specify the path to the file you want to delete
+        state: absent

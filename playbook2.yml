@@ -1,0 +1,24 @@
+---
+- hosts: webservers
+  become: True
+  ignore_errors: yes
+  gather_facts: yes
+  vars:
+      package_name: httpd
+  tasks:
+      - name: Install package
+        yum:
+          name: "{{ package_name }}"
+          state: present
+      - name: create groups
+        group:
+            state: present
+            name: "{{ item }}"
+
+        loop:
+              - cloud
+              - security
+              - dev
+              - operation
+              - qa_team
+           

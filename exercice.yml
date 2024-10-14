@@ -1,0 +1,43 @@
+---
+- hosts: webservers
+  become: True
+  become_user: root
+  ignore_errors: yes
+  gather_facts: yes
+  tasks: 
+   - name: install required packages
+     package: 
+         state: present
+         name: "{{ item }}"
+      
+     loop:
+       - unzip
+       - wget
+       - httpd
+   - name: download artifact
+     get_url:
+         url: https://github.com/Juliox007/Resume.git
+         dest: /home/ec2-user/main.zip
+
+  
+   - name: unarchive zip file
+     unarchive:
+         src: /tmp/main.zip/
+         remote_src: yes
+         dest: /tmp/
+
+   - name: copy artifact to html folder
+     copy:
+       remote_src: yes
+       src: /tmp/static-resume-main/
+       owner: apache
+       group: apapche
+       mode: '0755'
+
+   - name: start the apache daemon
+     systemd:
+       name: httpd
+       state: started
+       enabled: yes
+
+     

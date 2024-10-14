@@ -1,0 +1,21 @@
+---
+- hosts: webservers
+  become: yes
+  ignore_errors: yes
+  vars:
+    f_name: John
+  tasks:
+    - name: Debug module
+      debug:
+        #msg: "Hello from ansible playbook"
+        var: f_name
+
+
+    - name: check server uptime
+      command: uptime
+      register: uptime_output
+
+    - name: Dispay output variable
+      debug:
+        #var: uptime_output       # This will display with nore details
+        var: uptime_output.stdout_lines  # This will display just the line filtered ( like standard output lines)

@@ -1,0 +1,10 @@
+---
+- hosts: all
+  gather_facts: no
+  vars_files:
+    - vars.yml
+  tasks:
+    - name: copy config file
+      template: 
+         dest: /tmp/limocoin.co
+         src: /home/ec2-user/ansible-dev/ansible-dev/apache.j2

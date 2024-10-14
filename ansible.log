@@ -1,0 +1,46 @@
+2024-10-07 09:22:06,758 p=7530 u=ec2-user n=ansible | PLAY [all] **********************************************************************************************************************************************************************
+2024-10-07 09:22:06,768 p=7530 u=ec2-user n=ansible | TASK [Gathering Facts] **********************************************************************************************************************************************************
+2024-10-07 09:22:08,485 p=7530 u=ec2-user n=ansible | ok: [172.31.28.81]
+2024-10-07 09:22:08,593 p=7530 u=ec2-user n=ansible | ok: [172.31.23.240]
+2024-10-07 09:22:08,612 p=7530 u=ec2-user n=ansible | TASK [create a file] ************************************************************************************************************************************************************
+2024-10-07 09:22:09,229 p=7530 u=ec2-user n=ansible | changed: [172.31.28.81]
+2024-10-07 09:22:09,286 p=7530 u=ec2-user n=ansible | changed: [172.31.23.240]
+2024-10-07 09:22:09,295 p=7530 u=ec2-user n=ansible | TASK [check something] **********************************************************************************************************************************************************
+2024-10-07 09:22:09,955 p=7530 u=ec2-user n=ansible | fatal: [172.31.28.81]: FAILED! => {"changed": false, "cmd": "bhjdd", "msg": "[Errno 2] No such file or directory: b'bhjdd': b'bhjdd'", "rc": 2, "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2024-10-07 09:22:09,956 p=7530 u=ec2-user n=ansible | ...ignoring
+2024-10-07 09:22:10,014 p=7530 u=ec2-user n=ansible | fatal: [172.31.23.240]: FAILED! => {"changed": false, "cmd": "bhjdd", "msg": "[Errno 2] No such file or directory: b'bhjdd': b'bhjdd'", "rc": 2, "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2024-10-07 09:22:10,014 p=7530 u=ec2-user n=ansible | ...ignoring
+2024-10-07 09:22:10,021 p=7530 u=ec2-user n=ansible | TASK [create directory] *********************************************************************************************************************************************************
+2024-10-07 09:22:10,358 p=7530 u=ec2-user n=ansible | ok: [172.31.28.81]
+2024-10-07 09:22:10,435 p=7530 u=ec2-user n=ansible | ok: [172.31.23.240]
+2024-10-07 09:22:10,443 p=7530 u=ec2-user n=ansible | TASK [create group] *************************************************************************************************************************************************************
+2024-10-07 09:22:10,905 p=7530 u=ec2-user n=ansible | ok: [172.31.28.81]
+2024-10-07 09:22:10,921 p=7530 u=ec2-user n=ansible | ok: [172.31.23.240]
+2024-10-07 09:22:10,934 p=7530 u=ec2-user n=ansible | TASK [create user Julio] ********************************************************************************************************************************************************
+2024-10-07 09:22:11,554 p=7530 u=ec2-user n=ansible | fatal: [172.31.28.81]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (user) module: when. Supported parameters include: non_unique, authorization, expires, ssh_key_comment, ssh_key_type, groups, update_password, seuser, umask, group, hidden, comment, ssh_key_bits, shell, password, system, force, password_expire_max, append, password_expire_min, password_lock, ssh_key_file, local, skeleton, generate_ssh_key, login_class, home, name (user), ssh_key_passphrase, role, move_home, state, create_home (createhome), profile, uid, remove."}
+2024-10-07 09:22:11,555 p=7530 u=ec2-user n=ansible | ...ignoring
+2024-10-07 09:22:11,584 p=7530 u=ec2-user n=ansible | fatal: [172.31.23.240]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (user) module: when. Supported parameters include: system, comment, ssh_key_comment, create_home (createhome), move_home, profile, role, append, name (user), login_class, ssh_key_file, remove, non_unique, home, generate_ssh_key, uid, umask, groups, skeleton, password_expire_min, update_password, expires, group, shell, state, hidden, local, seuser, ssh_key_passphrase, password, ssh_key_type, password_lock, ssh_key_bits, authorization, force, password_expire_max."}
+2024-10-07 09:22:11,584 p=7530 u=ec2-user n=ansible | ...ignoring
+2024-10-07 09:22:11,591 p=7530 u=ec2-user n=ansible | TASK [Check uptime] *************************************************************************************************************************************************************
+2024-10-07 09:22:11,947 p=7530 u=ec2-user n=ansible | changed: [172.31.28.81]
+2024-10-07 09:22:11,984 p=7530 u=ec2-user n=ansible | changed: [172.31.23.240]
+2024-10-07 09:22:12,002 p=7530 u=ec2-user n=ansible | TASK [Check the date] ***********************************************************************************************************************************************************
+2024-10-07 09:22:12,435 p=7530 u=ec2-user n=ansible | changed: [172.31.28.81]
+2024-10-07 09:22:12,462 p=7530 u=ec2-user n=ansible | changed: [172.31.23.240]
+2024-10-07 09:22:12,487 p=7530 u=ec2-user n=ansible | PLAY RECAP **********************************************************************************************************************************************************************
+2024-10-07 09:22:12,487 p=7530 u=ec2-user n=ansible | 172.31.23.240              : ok=8    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=2   
+2024-10-07 09:22:12,487 p=7530 u=ec2-user n=ansible | 172.31.28.81               : ok=8    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=2   
+2024-10-07 09:25:53,763 p=7756 u=ec2-user n=ansible | 172.31.23.240 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.7"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2024-10-07 09:25:53,911 p=7756 u=ec2-user n=ansible | 172.31.28.81 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}

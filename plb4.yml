@@ -1,0 +1,19 @@
+---
+- name: sample book
+  hosts: databaseservers
+  remote_user: root
+  become: true
+  tasks:
+    - name: install apapche2
+      apt:
+       name: apache2
+       state: latest
+    - name: run apache2
+      service:
+        name: apache2
+        state: started
+       
+    - name: create content
+      copy:
+          content: "welcome"
+          dest: /var/www/html/index.html

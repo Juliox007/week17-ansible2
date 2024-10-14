@@ -1,0 +1,16 @@
+---
+- name: Install and start Apache2
+  hosts: databaseservers  # Specify your target hosts
+  become: yes  # Use sudo to run tasks as root
+  tasks:
+    - name: Install apache2
+      apt:
+        name: apache2
+        state: present
+        update_cache: yes  # Update the apt cache
+
+    - name: Start apache2 service
+      service:
+        name: apache2
+        state: started
+        enabled: yes  # Ensure apache2 starts on boot
